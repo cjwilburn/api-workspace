@@ -19,7 +19,7 @@ ENV TERM xterm
 
 
 RUN apt-get install -y software-properties-common && \
-    add-apt-repository -y ppa:webupd8team/java
+add-apt-repository -y ppa:webupd8team/java
 
 
 #
@@ -27,11 +27,7 @@ RUN apt-get install -y software-properties-common && \
 # Software Installation
 #--------------------------------------------------------------------------
 #
-
-RUN apt-get update && \
-    apt-get install -y --allow-downgrades --allow-remove-essential \
-        --allow-change-held-packages \
-# JDK Java 8
- build-essential python-dev git gnome-tweak-tool default-jdk && \
- apt-get install -y tomcat7 && \
- apt-get install -y tomcat7-docs tomcat7-admin tomcat7-examples
+# JDK 8 and Tomcat
+RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages build-essential python-dev git gnome-tweak-tool default-jdk && \
+apt-get install -y tomcat7 && \
+apt-get install -y tomcat7-docs tomcat7-admin tomcat7-examples
