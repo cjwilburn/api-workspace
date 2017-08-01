@@ -31,8 +31,7 @@ RUN apt-get install -y software-properties-common && \
 RUN apt-get update && \
     apt-get install -y --allow-downgrades --allow-remove-essential \
         --allow-change-held-packages \
-
 # JDK Java 8
-RUN apt-get install -y build-essential python-dev git gnome-tweak-tool oracle-java8-installer
-RUN apt-get install tomcat7
-RUN apt-get install tomcat7-docs tomcat7-admin tomcat7-examples
+ build-essential python-dev git gnome-tweak-tool default-jdk && \
+ apt-get install -y tomcat7 && \
+ apt-get install -y tomcat7-docs tomcat7-admin tomcat7-examples
